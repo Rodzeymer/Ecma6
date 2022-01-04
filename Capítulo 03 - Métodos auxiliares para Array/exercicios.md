@@ -22,6 +22,9 @@ for(var i = 0; i<= numeros.length; i++) {
     }
 }
 
+var numeros = [0,1,2,3,4,5];
+numeros.forEach
+
 // saída:
 // 0 é par
 // 1 é ímpar
