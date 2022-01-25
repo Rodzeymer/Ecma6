@@ -141,17 +141,29 @@ console.log(removeDuplicatas(numerosDuplos))
 
 /*
 ## Exercício 6 - Reprovado!
-Dada uma lista de objetos que contém o nome de um aluno e sua média final, crie o método 'aprovados' que recebe esta lista e retorna somente os alunos que foram aprovados.
+Dada uma lista de objetos que contém o nome de um aluno e sua média final, crie o método 'aprovados' 
+que recebe esta lista e retorna somente os alunos que foram aprovados.
 
 Para isto, utilize o método `filter`.
 
 ``` javascript
+*/
 var alunos = [
-  { nome: 'Diogo', media: 5.5 },
-  { nome: 'Julia', media: 9.5 },
-  { nome: 'Roberto', media: 1.5 },
-  { nome: 'Tiago', media: 6.0 }
+    { nome: 'Diogo', media: 5.5 },
+    { nome: 'Julia', media: 9.5 },
+    { nome: 'Roberto', media: 1.5 },
+    { nome: 'Tiago', media: 6.0 }
 ];
+
+
+var aprovados = alunos.filter(function(aluno){
+    return aluno.media >= 6
+})
+
+console.log(aprovados)
+
+
+/*
 ```
 
 * Exemplo: aprovados(alunos, 6.5) → [ { nome: 'Julia', media: 9.5 } ]
@@ -166,13 +178,21 @@ Dado estes parâmetros, a função deve buscar na lista e retornar o registro qu
 
 Utilize o método `find`.
 
-``` javascript
+``` javascript*/
 var lista = [
     { nome: 'Tânia', sobrenome: 'Cardoso', idade: 65 },
     { nome: 'Emilly', sobrenome: 'Barbosa', idade: 46 },
     { nome: 'Vitória', sobrenome: 'Costa', idade: 83 },
     { nome: 'Erick', sobrenome: 'Ferreira', idade: 16 }
 ]
+
+var busque = lista.find(function(busca1, busca2, busca3){
+    return [lista.busca1 === 'nome', lista.busca2 === 'Tânia', lista.busca3 === lista]
+})
+
+console.log(busque)
+
+/*
 ```
 
 * Exemplo: buscar('nome', 'Tânia', lista) → { nome: 'Tânia', sobrenome: 'Cardoso', idade: 65 }
@@ -185,12 +205,25 @@ A função deve retornar a soma de todas as áreas.
 Tome como base a entrada a seguir:
 
 ``` javascript
+*/
 var dimensoes = [
   { altura: 10, comprimento: 20},
   { altura: 2, comprimento: 4},
   { altura: 1, comprimento: 1},
   { altura: 50, comprimento: 50}
 ]
+
+var areaCalculada = dimensoes.map(function(dimensao){
+    var soma = dimensoes.altura * dimensoes.comprimento
+    var somatorio = soma.reduce(function(soma, somatorio){
+        return soma + somatorio
+    })
+    
+})
+
+console.log(areaCalculada)
+
+/*
 ```
 
 * Exemplo: calculaAreaTotal(dimensoes) → 2709
