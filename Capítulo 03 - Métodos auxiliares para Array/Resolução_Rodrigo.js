@@ -207,19 +207,20 @@ Tome como base a entrada a seguir:
 ``` javascript
 */
 var dimensoes = [
-  { altura: 10, comprimento: 20},
-  { altura: 2, comprimento: 4},
-  { altura: 1, comprimento: 1},
-  { altura: 50, comprimento: 50}
+    { altura: 10, comprimento: 20},
+    { altura: 2, comprimento: 4},
+    { altura: 1, comprimento: 1},
+    { altura: 50, comprimento: 50}
 ]
 
-var areaCalculada = dimensoes.map(function(dimensao){
-    var soma = dimensoes.altura * dimensoes.comprimento
-    var somatorio = soma.reduce(function(soma, somatorio){
-        return soma + somatorio
-    })
-    
+var areaCalculada = dimensoes.map(function(dimensoes){
+      var soma = dimensoes.altura * dimensoes.comprimento
+    return soma
 })
+var sum = areaCalculada.reduce((a, b) => a + b, 0);
+
+console.log(sum)
+
 
 console.log(areaCalculada)
 
@@ -229,18 +230,56 @@ console.log(areaCalculada)
 * Exemplo: calculaAreaTotal(dimensoes) → 2709
 
 ## Exercício 9 - Raízes quadradas
-Crie uma função chamada `calculaRaizesQuadradas` que recebe um array de números inteiros positivos e devolve um outro array com as raízes quadradas correspondentes de cada um dos itens.
+Crie uma função chamada `calculaRaizesQuadradas` que recebe um array de números inteiros positivos e 
+devolve um outro array com as raízes quadradas correspondentes de cada um dos itens.
 
 * para este exercício, assuma que a entrada terá somente números com raiz exata.
 * utilize a função Math.sqrt para calcular a raiz quadrada
+*/
+
+var numeros = [81, 64, 49, 36, 25, 16, 9]
+
+var calculaRaizesQuadradas = numeros.map(function(numeros){
+    var raiz = Math.sqrt(numeros)
+
+    return raiz
+})
+
+console.log(calculaRaizesQuadradas)
+
+/*
+
 
 ## Exercício 10 - E tem alguma diferença?
 Diga, em poucas palavras, qual a diferença entre os métodos auxiliares `forEach` e `map`.
 
+*/
+
+'''O forEach passa a função por todos os itens do array, apenas exibindo-os,'''
+'''o map passa por cada um mas executa a tarefa dentro da função em cada um dos itens'''
+
+/*
+
 ## Exercício 11 - A pequena ovelha Dolly
-Utilizando o método auxiliar `forEach`, crie uma função `clonaObjeto` que recebe como parâmetro um objeto e cria uma cópia exata dela.
+Utilizando o método auxiliar `forEach`, crie uma função `clonaObjeto` que recebe como parâmetro um objeto e 
+cria uma cópia exata dela.
 
 * utilize o método `Object.getOwnPropertyNames` para obter as propriedades do objeto
+
+*/
+
+var numeros = [1, 3, 5, 7, 9, 11, 13, 15, 17, 16, 14, 12, 10, 8, 6, 4, 2, 0]
+
+var numeros2 = numeros.forEach(function(numeros){
+    numeros2 = numeros
+
+    return numeros2
+})
+
+console.log(numeros)
+console.log(numeros2)
+
+/*
 
 ## Exercício 12 - Limpando o estoque
 Crie um método chamado `existeProdutosDatados` que recebe um parâmetro chamado `produtos` que é um array de `produtos` e identifica se há algum produto que está acima da data de validade. Caso existe, deve voltar `true`, caso contrário, `false`. Cada produto tem as seguintes características:
